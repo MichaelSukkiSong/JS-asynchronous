@@ -52,7 +52,7 @@
 
 
         // Produce promise
-        // into the the promise, we pass in a function called the executor, which is a function that will be immediately called once the promise is created.
+        // into the promise, we pass in a function called the executor, which is a function that will be immediately called once the promise is created.
         // the executor function takes in two arguments, which are the resolve and reject callback functions.
         // the executor function is used to inform the promise whether the event it is handling was successful or not.
         // If it was successful we're gonna call the resolve function, and if not we call the reject function.
@@ -83,26 +83,40 @@
             });
         };
 
-        // Consume promise
-        getIDs
-        // the 'then' method allows us to add an event handler for the case that the promise is fullfilled. which means that there is a result.
-        .then(IDs => { // this argument here will be the result of the successful promise. in this case [523, 883, 432, 974].
+        // // Consume promise
+        // getIDs
+        // // the 'then' method allows us to add an event handler for the case that the promise is fullfilled. which means that there is a result.
+        // .then(IDs => { // this argument here will be the result of the successful promise. in this case [523, 883, 432, 974].
+        //     console.log(IDs);
+        //     return getRecipe(IDs[2]); // returns a promise
+        // })
+        // .then(recipe => { // we can add the next then to handle the result of that resolved promise
+        //     console.log(recipe);
+        //     return getRelated('Jonas Schmedtmann');
+        // })
+        // .then(recipe => {
+        //     console.log(recipe);
+        // })
+
+        // // the 'catch' method allows us to add an handler for the case that the promise gets rejected. so that an error happened.
+        // .catch(error => {
+        //     console.log('Error!!');
+        // });
+
+
+        
+        async function getRecipesAW() {
+            const IDs = await getIDs;
             console.log(IDs);
-            return getRecipe(IDs[2]); // returns a promise
-        })
-        .then(recipe => { // we can add the next then to handle the result of that resolved promise
+            const recipe = await getRecipe(IDs[2]);
             console.log(recipe);
-            return getRelated('Jonas Schmedtmann');
-        })
-        .then(recipe => {
-            console.log(recipe);
-        })
+            const related = await getRelated('Jonas Schmedtmann');
+            console.log(related);
 
-        // the 'catch' method allows us to add an handler for the case that the promise gets rejected. so that an error happened.
-        .catch(error => {
-            console.log('Error!!');
-        });
-
+            return recipe;
+        }
+        getRecipesAW().then(result => console.log(`${result} is the best ever!`));
+        
 
 
     </script>
