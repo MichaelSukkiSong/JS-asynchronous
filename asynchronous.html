@@ -84,28 +84,33 @@
                 }, 1500, publisher);
             });
         };
+        */
 
-        // // Consume promise
-        // getIDs
-        // // the 'then' method allows us to add an event handler for the case that the promise is fullfilled. which means that there is a result.
-        // .then(IDs => { // this argument here will be the result of the successful promise. in this case [523, 883, 432, 974].
-        //     console.log(IDs);
-        //     return getRecipe(IDs[2]); // returns a promise
-        // })
-        // .then(recipe => { // we can add the next then to handle the result of that resolved promise
-        //     console.log(recipe);
-        //     return getRelated('Jonas Schmedtmann');
-        // })
-        // .then(recipe => {
-        //     console.log(recipe);
-        // })
+        /*
+        // Consume promise
+        getIDs
+        // the 'then' method allows us to add an event handler for the case that the promise is fullfilled. which means that there is a result.
+        .then(IDs => { // this argument here will be the result of the successful promise. in this case [523, 883, 432, 974].
+            console.log(IDs);
+            return getRecipe(IDs[2]); // returns a promise
+        })
+        .then(recipe => { // we can add the next then to handle the result of that resolved promise
+            console.log(recipe);
+            return getRelated('Jonas Schmedtmann');
+        })
+        .then(recipe => {
+            console.log(recipe);
+        })
 
-        // // the 'catch' method allows us to add an handler for the case that the promise gets rejected. so that an error happened.
-        // .catch(error => {
-        //     console.log('Error!!');
-        // });
+        // the 'catch' method allows us to add an handler for the case that the promise gets rejected. so that an error happened.
+        .catch(error => {
+            console.log('Error!!');
+        });
+        */
 
 
+
+        /*
         // async, await
         // was designed for us to consume promises, not to produce them
 
@@ -141,6 +146,10 @@
 
 
 
+
+
+        /*
+        // fetch
         function getweather(woeid) {
             fetch(`https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/${woeid}/`) // fetch api gets our data and returns a promise
             .then(result => {
@@ -157,11 +166,12 @@
 
         getweather(2487956);
         getweather(44418);
+        */
 
 
 
 
-
+        /*
         async function getWeatherAW(woeid) {
             try {
                 const result = await fetch(`https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/${woeid}/`);
@@ -173,12 +183,14 @@
                 alert(error);
             }
         }
+
         getWeatherAW(2487956);
         let dataLondon;
         getWeatherAW(44418).then(data => {
             dataLondon = data;
             console.log(dataLondon);
         });
+        */
 
 
 
