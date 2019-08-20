@@ -123,6 +123,8 @@
             return recipe;
         }
 
+
+
         // this doesnt work because, getRecipesAW function runs asynchronously in the background
         // so by the time we try console log this getRecipesAW function is still running in the background. still doing its job.
         // so we only see the result as : Promise [<pendings>] : meaning, it's a promise but we dont have any results yet.
@@ -139,9 +141,35 @@
 
 
 
+        function getweather(woeid) {
+            fetch(`https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/${woeid}/`) // fetch api gets our data and returns a promise
+            .then(result => {
+                console.log(result);
+                return result.json(); // will return a promise. because it happens asynchronously in the background.
+            })
+            .then(data => {
+                console.log(data);
+                const today = data.consolidated_weather[0];
+                console.log(`Temperatures in ${data.title} stay between ${today.min_temp} and ${today.max_temp}.`);
+            })
+            .catch(error => console.log(error));
+        }
+
+        getweather(2487956);
+        // getweather(44418);
+
+
+
+
+
+
+
+
+
     </script>
 </body>
 </html>
+
 
 
 
