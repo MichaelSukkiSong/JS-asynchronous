@@ -154,7 +154,7 @@
             fetch(`https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/${woeid}/`) // fetch api gets our data and returns a promise
             .then(result => {
                 //console.log(result);
-                return result.json(); // will return a promise. because it happens asynchronously in the background.
+                return result.json(); // will return a promise. because it happens asynchronously in the background. The json() method of the Body mixin takes a Response stream and reads it to completion. It returns a promise that resolves with the result of parsing the body text as JSON.
             })
             .then(data => {
                 //console.log(data);
@@ -164,8 +164,8 @@
             .catch(error => console.log(error));
         }
 
-        getweather(2487956);
-        getweather(44418);
+        getweather(2487956); //san francisco
+        getweather(44418); //london
         */
 
 
