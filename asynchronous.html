@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Asynchronous JavaScript</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Asynchronous JavaScript</h1>
     <script>
-        /*
+      /*
         const second = () => {
             setTimeout(() => {
                 console.log('Async Hey there');
@@ -25,9 +25,7 @@
         first();
         */
 
-
-
-        /*
+      /*
         function getRecipe() {
             setTimeout(() => {
                 const recipeID = [523, 883, 432, 974];
@@ -51,8 +49,7 @@
         getRecipe();
         */
 
-
-        /*
+      /*
         // Produce promise
         // into the promise, we pass in a function called the executor, which is a function that will be immediately called once the promise is created.
         // the executor function takes in two arguments, which are the resolve and reject callback functions.
@@ -86,7 +83,7 @@
         };
         */
 
-        /*
+      /*
         // Consume promise
         getIDs
         // the 'then' method allows us to add an event handler for the case that the promise is fullfilled. which means that there is a result.
@@ -108,9 +105,7 @@
         });
         */
 
-
-
-        /*
+      /*
         // async, await
         // was designed for us to consume promises, not to produce them
 
@@ -143,12 +138,7 @@
         getRecipesAW().then(result => console.log(`${result} is the best ever!`));
         */
 
-
-
-
-
-
-        /*
+      /*
         // fetch
         function getweather(woeid) {
             fetch(`https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/${woeid}/`) // fetch api gets our data and returns a promise
@@ -168,10 +158,7 @@
         getweather(44418); //london
         */
 
-
-
-
-        /*
+      /*
         async function getWeatherAW(woeid) {
             try {
                 const result = await fetch(`https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/${woeid}/`);
@@ -191,21 +178,6 @@
             console.log(dataLondon);
         });
         */
-
-
-
     </script>
-</body>
+  </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
